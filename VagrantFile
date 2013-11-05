@@ -1,0 +1,9 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "raring64"
+  config.vm.box_url = "http://goo.gl/ceHWg"
+  config.ssh.forward_x11 = true
+  #config.vm.synced_folder "./", "/var/www", id: "vagrant-root", :nfs => false
+  config.vm.provision "shell", path: "scripts/basic_tools.sh"
+  config.vm.provision "shell", path: "scripts/python_etc.sh"
+end
+
