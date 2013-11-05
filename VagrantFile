@@ -10,5 +10,5 @@ end
 $BOOTSTRAP_SCRIPT = <<EOF
 
 
- ipython notebook
+ ipython3 notebook
 EOF
