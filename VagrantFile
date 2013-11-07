@@ -16,6 +16,6 @@ $BOOTSTRAP_SCRIPT = <<EOF
     sudo apt-get -y install python3-scipy
     sudo apt-get -y install ipython3-notebook
     
-    ipython3 notebook &
-    curl http://127.0.0.1:8888/
+    #ipython3 notebook &
+    #curl http://127.0.0.1:8888/
 EOF
