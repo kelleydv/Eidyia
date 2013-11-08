@@ -2,10 +2,10 @@ Vagrant.configure("2") do |config|
   config.vm.box = "raring-vanilla64"
   config.vm.box_url = "http://goo.gl/ceHWg"
   config.ssh.forward_x11 = true 
-  config.vm.provision :shell, :inline => $BOOTSTRAP_SCRIPT 
+  config.vm.provision :shell, :inline => $startup
   config.vm.network :forwarded_port, host: 8888, guest: 8888
 end
-$BOOTSTRAP_SCRIPT = <<EOF
+$startup = <<EOF
     sudo apt-get -y install build-essential # g++, make, etc.
     sudo apt-get -y install git
     sudo apt-get -y install curl
@@ -16,6 +16,6 @@ $BOOTSTRAP_SCRIPT = <<EOF
     sudo apt-get -y install python3-scipy
     sudo apt-get -y install ipython3-notebook
     
-    #ipython3 notebook &
-    #curl http://127.0.0.1:8888/
+    ipython3 notebook  --ip='0.0.0.0'
+
 EOF
