@@ -6,13 +6,15 @@ This environment is designed to be used by professionals and students, with ease
 
 Included Libraries
 ------------------
-<a href="https://github.com/numpy/numpy" target="_blank">Numpy</a>
+<a href="https://github.com/numpy/numpy" target="_blank">NumPy</a>
 
-<a href="https://github.com/matplotlib/matplotlib" target="_blank">Matplotlib</a>
+<a href="https://github.com/matplotlib/matplotlib" target="_blank">matplotlib</a>
 
-<a href="https://github.com/scipy/scipy" target="_blank">Scipy</a>
+<a href="https://github.com/scipy/scipy" target="_blank">SciPy</a>
 
-<a href="https://github.com/ipython/ipython" target="_blank">iPython</a>
+<a href="https://github.com/sympy/sympy" target="_blank">SymPy</a>
+
+<a href="https://github.com/ipython/ipython" target="_blank">IPython</a>
 
 Getting Started
 ---------------
