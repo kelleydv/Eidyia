@@ -29,6 +29,7 @@ After the vm boots and finishes installations, visiting http://0.0.0.0:8888 in y
 The default notebooks are an excellent series by
 <a href="https://github.com/jrjohansson/scientific-python-lectures" target="_blank">jrjohansson</a>
 on scientific computing with python.
+<img src="http://i.imgur.com/fCnTlYu.png" alt="">
 
 Using Linux
 -----------
@@ -55,3 +56,5 @@ With x11 forwarding, matplotlib can also be fully utilized from the command line
 <a href="https://github.com/stemdev/Eidyia/blob/master/VagrantFile" target="_blank">VagrantFile</a>
 also installs git, curl, and ubuntu's 
 <a href="http://packages.ubuntu.com/lucid/build-essential" target="_blank">build-essential</a> (g++, make, etc.).
+
+
