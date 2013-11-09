@@ -57,4 +57,14 @@ With x11 forwarding, matplotlib can also be fully utilized from the command line
 also installs git, curl, and ubuntu's 
 <a href="http://packages.ubuntu.com/lucid/build-essential" target="_blank">build-essential</a> (g++, make, etc.).
 
+More on Notebooks
+----------
+To stop the notebook server
+```shell
+$ killall ipython$
+```
+To restart the notebook server
+```shell
+$ ipython3 notebook --ip='0.0.0.0'
+```
 
