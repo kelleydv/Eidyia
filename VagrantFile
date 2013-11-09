@@ -27,6 +27,14 @@ $startup = <<EOF
     #scipy
     sudo apt-get -y install python3-scipy
     
+    #sympy from source for python3
+    wget https://pypi.python.org/packages/source/s/sympy/sympy-0.7.3-py3.3.tar.gz#md5=46132548644c97034899c1a739d06127
+    tar xzf sympy-*
+    cd sympy-*
+    sudo python3 setup.py install
+    cd ..
+    sudo rm -rf sympy-*
+
     #ipython and notebook
     sudo apt-get -y install ipython3
     sudo apt-get -y install ipython3-notebook
