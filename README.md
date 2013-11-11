@@ -55,7 +55,7 @@ Or, alternatively
 >>> from pylab import *
 ```
 With x11 forwarding, matplotlib can also be fully utilized from the command line.  The installation script in
-<a href="https://github.com/stemdev/Eidyia/blob/master/VagrantFile" target="_blank">VagrantFile</a>
+<a href="https://github.com/stemdev/Eidyia/blob/master/VagrantFile" target="_blank">Vagrantfile</a>
 also installs git, curl, and ubuntu's 
 <a href="http://packages.ubuntu.com/lucid/build-essential" target="_blank">build-essential</a> (g++, make, etc.).
 
@@ -63,7 +63,7 @@ More on Notebooks
 ----------
 To stop the notebook server
 ```shell
-$ killall ipython$
+$ killall ipython3
 ```
 To restart the notebook server
 ```shell
