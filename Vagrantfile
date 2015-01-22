@@ -1,48 +1,32 @@
+# verified on [vagrant 1.5.2][vb 4.2.24]
+
 Vagrant.configure("2") do |config|
-  config.vm.box = "raring-vanilla64"
-  config.vm.box_url = "http://goo.gl/ceHWg"
-  config.ssh.forward_x11 = true
-  config.vm.provision :shell, :inline => $startup
-  config.vm.network :forwarded_port, host: 8888, guest: 8888
+
+  # Ubuntu 14.04
+  config.vm.box = "trusty64"
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+
+ # Allocate host resources
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--cpus", "4"] 
+  end
+
+  # Network
+  config.vm.network "private_network", ip: "10.10.10.10" #host-only network required for nfs
+  config.vm.network "forwarded_port", guest: 8888, host: 8888 #Python
+  config.vm.network "forwarded_port", guest: 27017, host: 27017 #MongoDB
+
+  # Vagrant Cachier (optional)
+  # run `vagrant plugin install vagrant-cachier` to install
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+    config.cache.synced_folder_opts = {
+      type: :nfs,
+      mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
+    }
+  end
+
+  config.vm.provision "shell", path: "scripts/install.sh"
+
 end
-$startup = <<EOF
-    #basic tools 
-    sudo apt-get -y install build-essential # g++, make, etc.
-    sudo apt-get -y install git
-    sudo apt-get -y install curl
-    sudo apt-get -y install x11-apps
-    
-    #python3 and headers
-    sudo apt-get -y install python3
-    sudo apt-get -y install python3-dev
-    
-    #numpy
-    sudo apt-get -y install gfortran
-    sudo apt-get -y install python3-nose
-    sudo apt-get -y install python3-numpy
-    
-    #matplotlib
-    sudo apt-get -y install python3-matplotlib
-    
-    #scipy
-    sudo apt-get -y install python3-scipy
-    
-    #sympy from source for python3
-    wget https://pypi.python.org/packages/source/s/sympy/sympy-0.7.3-py3.3.tar.gz#md5=46132548644c97034899c1a739d06127
-    tar xzf sympy-*
-    cd sympy-*
-    sudo python3 setup.py install
-    cd ..
-    sudo rm -rf sympy-*
-
-    #ipython and notebook
-    sudo apt-get -y install ipython3
-    sudo apt-get -y install ipython3-notebook
-
-    #download some example notebooks 
-    git clone https://github.com/jrjohansson/scientific-python-lectures.git
-    cd sci*
-
-    #start the notebook server
-    ipython3 notebook  --ip='0.0.0.0' 
-EOF

@@ -1,0 +1,9 @@
+
+# Custom shell prompt
+red=$(tput setaf 1)
+bold=$(tput bold)
+reset=$(tput sgr0)
+export PS1="\u:[\[$red$bold\]\w\[$reset\]]$ "
+
+# Variable to flag that this has been added from install
+export PROFILEADDITIONS=true
