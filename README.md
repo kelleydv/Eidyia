@@ -6,41 +6,42 @@ This environment is designed to be used by professionals and students, with ease
 
 Included Libraries
 ------------------
-<a href="https://github.com/numpy/numpy" target="_blank">NumPy</a>
+[NumPy](https://github.com/numpy/numpy)
 
-<a href="https://github.com/matplotlib/matplotlib" target="_blank">matplotlib</a>
+[matplotlib](https://github.com/matplotlib/matplotlib)
 
-<a href="https://github.com/scipy/scipy" target="_blank">SciPy</a>
+[SciPy](https://github.com/scipy/scipy)
 
-<a href="https://github.com/sympy/sympy" target="_blank">SymPy</a>
+[SymPy](https://github.com/sympy/sympy)
 
-<a href="https://github.com/ipython/ipython" target="_blank">IPython</a>
+[IPython](https://github.com/ipython/ipython)
 
 Getting Started
 ---------------
 
-With <a href="http://downloads.vagrantup.com/tags/v1.3.5" target="_blank">Vagrant</a> and
-<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a> installed:
+With [Vagrant](http://downloads.vagrantup.com/tags/v1.3.5)  and
+[VirtualBox](https://www.virtualbox.org/wiki/Downloads) installed:
 
 ```shell
 $ cd Eidyia
 $ vagrant up
 ```
 After the vm boots and finishes installations, visiting http://0.0.0.0:8888 in your host's browser will bring you to a dashboard of
-<a href="http://ipython.org/notebook.html" target="_blank">IPython notebooks</a>.
+[IPython notebooks](http://ipython.org/notebook.html) .
 The default notebooks are an excellent series by
-<a href="https://github.com/jrjohansson/scientific-python-lectures" target="_blank">jrjohansson</a>
+[jrjohansson](https://github.com/jrjohansson/scientific-python-lectures)
 on scientific computing with python.
 <img src="http://i.imgur.com/fCnTlYu.png" alt="">
 
 Using Linux
 -----------
 
-Eidiya runs on <a href="http://www.ubuntu.com/server" target="_blank">ubuntu server</a> 13.04.
+Eidiya runs on [ubuntu server](http://www.ubuntu.com/server) 14.04.
 To access Linux and all of the above Python libraries directly,
 
 ```shell
 $ cd Eidyia
+$ vagrant up
 $ vagrant ssh
 $ python3
 Python 3.3.1 (default, Apr 17 2013, 22:30:32) 
@@ -67,6 +68,7 @@ $ killall ipython3
 ```
 To restart the notebook server
 ```shell
+$ cd Eidyia/nb
 $ ipython3 notebook --ip='0.0.0.0'
 ```
 
