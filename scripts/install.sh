@@ -27,9 +27,11 @@ sudo apt-get update
 # Tools
 sudo apt-get -y install build-essential # g++, make, etc.
 sudo apt-get -y install git curl
+sudo apt-get -y install x11-apps
 
-# MongoDB
+# Databases
 sudo apt-get install -y mongodb-server
+sudo apt-get install -y postgresql
 
 # Python
 sudo apt-get -y install python3-setuptools
@@ -49,7 +51,10 @@ sudo apt-get -y install python3-pandas
 sudo apt-get -y install ipython3
 sudo apt-get -y install ipython3-notebook
 
-mkdir nb
+if [[ ! -d ./nb ]]
+then
+	mkdir nb
+fi
 cd nb
 
 #download some example notebooks 
