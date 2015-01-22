@@ -69,7 +69,7 @@ More on Notebooks
 ----------
 To stop the notebook server
 ```shell
-$ killall ipython3
+$ sudo killall ipython3
 ```
 To restart the notebook server
 ```shell
