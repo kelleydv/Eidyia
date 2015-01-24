@@ -60,8 +60,7 @@ Or, alternatively
 ```shell
 >>> from pylab import *
 ```
-With x11 forwarding, matplotlib can also be fully utilized from the command line.  The installation script in
-(Vagrantfile)[https://github.com/stemdev/Eidyia/blob/master/scripts/install.sh]
+With x11 forwarding, matplotlib can also be fully utilized from the command line.  The [installation script](https://github.com/stemdev/Eidyia/blob/master/scripts/install.sh)
 also installs git, curl, and ubuntu's 
 [build-essential](http://packages.ubuntu.com/lucid/build-essential) (g++, make, etc.).
 
