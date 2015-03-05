@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
   # Ubuntu 14.04
   config.vm.box = "trusty64"
   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.ssh.forward_x11 = true
 
  # Allocate host resources
   config.vm.provider :virtualbox do |vb|
