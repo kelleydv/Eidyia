@@ -24,7 +24,7 @@ Eidyia also includes MongoDB and PostgreSQL
 Getting Started
 ---------------
 
-With [Vagrant](http://downloads.vagrantup.com/tags/v1.3.5)  and
+With [Vagrant](https://www.vagrantup.com/)  and
 [VirtualBox](https://www.virtualbox.org/wiki/Downloads) installed:
 
 ```shell
